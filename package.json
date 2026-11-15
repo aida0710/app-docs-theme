@@ -33,7 +33,7 @@
     "build": "tsc -p tsconfig.build.json",
     "prepack": "npm run build",
     "typecheck": "vue-tsc -p tsconfig.json",
-    "test": "npm run build && node --test test/",
+    "test": "npm run build && node --test \"test/*.test.mjs\"",
     "check:site": "sh scripts/check-packed-site.sh"
   },
   "dependencies": {
