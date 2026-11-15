@@ -1,0 +1,53 @@
+{
+  "name": "@aida0710/app-docs-theme",
+  "version": "0.1.0",
+  "private": true,
+  "description": "自作アプリ（Sedum Note・sshc など）のドキュメントのサイトを同じ作りにする、VitePress のテーマと設定",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aida0710/app-docs-theme.git"
+  },
+  "homepage": "https://github.com/aida0710/app-docs-theme#readme",
+  "bugs": "https://github.com/aida0710/app-docs-theme/issues",
+  "type": "module",
+  "files": [
+    "dist",
+    "theme",
+    "CHANGELOG.md"
+  ],
+  "exports": {
+    "./config": {
+      "types": "./dist/config.d.ts",
+      "default": "./dist/config.js"
+    },
+    "./theme": "./theme/index.ts",
+    "./home-content": "./theme/homeContent.ts",
+    "./package.json": "./package.json"
+  },
+  "sideEffects": [
+    "*.css",
+    "./theme/index.ts"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "prepack": "npm run build",
+    "typecheck": "vue-tsc -p tsconfig.json",
+    "test": "npm run build && node --test test/",
+    "check:site": "sh scripts/check-packed-site.sh"
+  },
+  "dependencies": {
+    "@fontsource-variable/noto-sans-jp": "^5.3.0"
+  },
+  "peerDependencies": {
+    "vitepress": "^1.6.4"
+  },
+  "devDependencies": {
+    "typescript": "5.9.3",
+    "vitepress": "1.6.4",
+    "vue-tsc": "3.3.14"
+  },
+  "overrides": {
+    "vite": "6.4.5"
+  }
+}

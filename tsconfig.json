@@ -1,0 +1,14 @@
+{
+  // 型の検査だけに使う（npm run typecheck）。配る dist/config.js は tsconfig.build.json で作る。
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "skipLibCheck": true,
+    "noEmit": true
+  },
+  "include": ["src", "theme"]
+}

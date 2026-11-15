@@ -1,0 +1,12 @@
+{
+  // 製品の .vitepress/config.ts は Node が読むので、src/config.ts だけを JavaScript にして配る。
+  // テーマ（theme/）は製品の側の Vite が組み立てるので、TypeScript と .vue のまま配る。
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "noEmit": false,
+    "declaration": true,
+    "outDir": "dist",
+    "rootDir": "src"
+  },
+  "include": ["src"]
+}
